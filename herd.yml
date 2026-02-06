@@ -1,0 +1,11 @@
+name: anime-awards
+php: '8.2'
+secured: true
+aliases:
+    - 'no'
+services:
+    mysql:
+        version: 9.4.0
+        port: '${DB_PORT}'
+integrations:
+    forge: {  }
