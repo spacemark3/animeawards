@@ -27,8 +27,4 @@ class Anime extends Model
     {
         return $this->belongsToMany(Genre::class, 'anime_genre');
     }
-       public function syncGenres(array $genreIds): void
-    {
-        $this->genres()->sync($genreIds);
-    }
 }
