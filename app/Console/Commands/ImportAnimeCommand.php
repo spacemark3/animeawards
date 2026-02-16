@@ -34,17 +34,14 @@ class ImportAnimeCommand extends Command
         $importer = new AnimeImporter();
 
         $this->info("Fetching top anime from page {$page}...");
-
         $rawAnimes = $client->fetchTopAnime($page);
 
         foreach ($rawAnimes as $rawAnime) {
             $dto = AnimeMapper::map($rawAnime);
             $importer->import($dto);
-            $this->line("Imported: {$dto->title}");
+            $this->line("Imported: {$dto->title} ----- Rating: {$dto->score}");
         }
-
         $this->info('Import completed.');
-
         return Command::SUCCESS;
     }
 }
