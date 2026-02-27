@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Front\AnimeController;
+use App\Http\Controllers\AnimeController;
 use Illuminate\Support\Facades\Route;
 use App\Livewire\AnimeCollage;
 
@@ -12,8 +12,6 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
-
-Route::get('/mainpage', [AnimeController::class,'index'])->name('home');
 Route::get('/awge', AnimeCollage::class);
 
 
