@@ -26,13 +26,9 @@ class ImportAnimeCommand extends Command
     /**
      * Execute the console command.
      */
-    public function handle()
+    public function handle(JikanClient $client, AnimeImporter $importer)
     {
         $page = $this->argument('page');
-
-        $client = new JikanClient();
-        $importer = new AnimeImporter();
-
         $this->info("Fetching top anime from page {$page}...");
         $rawAnimes = $client->fetchTopAnime($page);
 
