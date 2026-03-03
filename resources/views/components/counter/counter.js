@@ -1,0 +1,2 @@
+
+alert('Counter component loaded!');
