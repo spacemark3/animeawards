@@ -68,4 +68,8 @@ Route::prefix('post')->group(function () {
     })->name('post.delete');
 });
 
+Route::get('/', function () {
+    return view('anime.home');
+});
+
 require __DIR__ . '/settings.php';
