@@ -1,6 +1,41 @@
 @import 'tailwindcss';
 @import '../../vendor/livewire/flux/dist/flux.css';
 
+.reel {
+    display: flex;
+    height: 100vh;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.anime-card {
+    flex-shrink: 0;
+    width: 300px;
+    margin: 0 20px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.anime-card img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.anime-info {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.anime-card:hover {
+    transform: scale(1.05);
+}
+
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
