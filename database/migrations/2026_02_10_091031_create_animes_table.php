@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('animes', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('mal_id')->unique();
+            $table->unsignedInteger('mal_id')->nullable();
             $table->string('title');
             $table->text('synopsis')->nullable();
             $table->string('image_url')->nullable();
